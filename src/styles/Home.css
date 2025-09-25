@@ -1,0 +1,25 @@
+#Home {
+    height: 600px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#Home h1 {
+    font-size: 40px;
+    color: white;
+    text-decoration: underline 5px darkred;
+    text-underline-offset: 20px;
+}
+
+#Home h2 {
+    font-size: 30px;
+    color: white;
+}
+#Home p {
+    color: wheat;
+    text-align: justify;
+}

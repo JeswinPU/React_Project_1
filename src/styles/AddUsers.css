@@ -1,0 +1,83 @@
+#FormBoxOutside{
+    width: 100%;
+    height: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+#FormBoxInside{
+    height: 700px;
+    width: 800px;
+    display: flex;
+    align-items: center ;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.103);
+    border-radius: 30px;
+    backdrop-filter: blur(12px);
+    border: 3px double rgba(114, 0, 0, 0.842);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+}   
+#FormBoxInside form{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+#FormBoxInside h1{
+    font-size: 34px;
+    color: white;
+    text-decoration: underline 3px black wavy;
+    text-underline-offset: 20px;
+
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#FormBoxInside form input{
+    width: 300px;
+    height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    transition: transform 0.3s ease-in-out;
+}
+#FormBoxInside form input::placeholder{
+    transition: letter-spacing 0.4s ease-in-out , color 0.2s ease-in-out;
+    letter-spacing: 1px;
+}
+#FormBoxInside form input:hover::placeholder{
+    letter-spacing: 4px;
+    color: darkred;
+}
+#FormBoxInside form input:focus::placeholder , #FormBoxInside form input:focus{
+    letter-spacing: 4px;
+    color: darkred;
+    transform: scale(1.1);    
+}
+#FormBoxInside form input:focus{
+    border-bottom: 3px solid crimson
+}
+
+#FormBoxInside form button{
+    width: 35%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.158);
+    border: 1px solid rgba(255, 0, 0, 0.253);
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.4s ease-in-out;
+}
+
+#FormBoxInside form button:hover{
+    background-color: rgba(255, 0, 0, 0.219);
+    transform: scale(1.1);
+    letter-spacing: 1px;
+    font-size: larger;
+    font-weight: bold;
+}

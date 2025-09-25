@@ -1,0 +1,22 @@
+#footerbox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    position: sticky;
+    bottom: 0;    
+    height: 80px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.281);
+    backdrop-filter: blur(10px);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#footerbox h1{
+    font-size: 20px;
+    color: white;
+}
+#footerbox p{
+    color: white;
+}

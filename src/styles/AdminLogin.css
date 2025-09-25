@@ -1,0 +1,148 @@
+body {
+    background: linear-gradient(-45deg, #0f0f0f, #1a0000, #400000, #b30000);
+    background-size: 400% 400%;
+    animation: gradientBG 5s ease infinite;
+    z-index: -10;
+    /* background-repeat: no-repeat; */
+    /* background-size: 500vh auto; */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#adminform form {
+    width: 500px;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#adminform input {
+    width: 250px;
+    height: 40px;
+    text-align: center;
+    border-radius: 15px;
+    border: none;
+    font-size: 15px;
+    background-color: rgb(166, 166, 166);
+}
+#adminform input::placeholder {
+    color: black;
+    font-size: 15px;
+    opacity: 1;
+    font-style: italic;
+}
+#adminform input:focus{
+    background-color: rgba(255, 0, 0, 0.082);
+}
+
+#adminform button{
+    width: 150px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.705);
+    transition: all 0.3s ease-in-out;
+}
+#adminform button:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 13px rgba(128, 0, 0, 0.651);
+}
+#adminform button:active{
+    background-color: rgba(0, 0, 0, 0.527);
+    box-shadow: 0 0 13px black;
+}
+
+nav {
+    height: 80px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    box-shadow: 0px 0px 10px black;
+}
+
+#box {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(161, 161, 161, 0.568);
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.638);
+    transition: all 1s ease-in-out;
+}
+
+#box h1 {
+    font-size: 30px;
+    margin-top: 20px;
+    color: rgba(0, 0, 0, 0.777);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
+    text-underline-offset: 10px;
+    text-decoration: underline 4px black;
+}
+
+nav h1 {
+
+    background: linear-gradient(270deg, #ff0000, #ff4500, #990000, #ff0000);
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientBG 6s ease infinite;
+    color: red;
+    font-size: 30px;
+    letter-spacing: 15px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#loginMain {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#togglebutton {
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    background-color: black;
+    transition: all 0.4s ease-in-out;
+    box-shadow: 0px 0px 20px rgba(129, 0, 0, 0.805);
+    margin: 20px;
+}
+
+#togglebutton:hover {
+    color: red;
+    transform: scale(1.05);
+    background-color: rgb(12, 12, 12);
+    text-shadow: 0px 0px 10px red;
+    box-shadow: 0px 0px 25px rgb(255, 0, 0);
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
