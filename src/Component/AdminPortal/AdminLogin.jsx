@@ -14,7 +14,7 @@ const Adminlogin = () => {
         if (emval === "" || psval === "") {
             alert("Please Provide/Fill all the Details")
         }
-        else if (emval === "admin@gmail.com" && psval === "admin123") {
+        else if (emval=== "admin@gmail.com" && psval === "admin123") {
             alert("login Successfull")
             nav("/adminportal/")
         }

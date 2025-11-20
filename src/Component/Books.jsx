@@ -16,7 +16,7 @@ const Books = () => {
             setBook(a)
 
         })
-    }, [Book])
+    }, [Book.length])
 
     let nav = useNavigate()
     let loc = useLocation()
@@ -53,9 +53,69 @@ const Books = () => {
         }
 
     }
+
+    const [searchVal, setSearchVal] = useState("");
+    const [filteredBooks, setFilteredBooks] = useState([]);
+
+    function searchBook() {
+        let searchval = document.querySelector('#searchBox input').value.trim().toLowerCase();
+
+        if (!searchval) {
+            console.log("Please enter a search term.");
+            document.querySelector('#searchResults h1').innerHTML = "Please enter a search term.";
+            return;
+        }
+        else{
+            document.querySelector('#searchResults h1').innerHTML = "";
+        }
+
+        const results = Book.filter((b) => {
+            let title = b?.title?.toLowerCase() ?? "";
+            return title.includes(searchval);
+        });
+        setFilteredBooks(results);
+
+        if (results.length === 0) {
+            console.log("No matching books found.");
+        }
+    }
     return (
         <>
             <h1 id='as'>BROWSE THROUGH OUR BEST COLLECTION OF BOOKS</h1>
+            <div id='searchBox'>
+                <input
+                    type="text"
+                    onInput={(e) => setSearchVal(e.target.value)}
+                    placeholder="Search books..."
+                />
+                <button onClick={searchBook}>Search</button>
+                <br />
+
+            </div>
+            <div id='searchResults'>
+                <h1></h1>
+                {filteredBooks.map((res) => (
+                    <div className="BookBox">
+                        <div key={res.id}>
+                            <h1>{res.title}</h1>
+                            <h2>{res.authors}</h2>
+                             <button onClick={() => {
+                                if (loc.pathname === "/adminportal/books") {
+                                    nav(`/adminportal/readbook/${res.id}`)
+                                }
+                                else {
+                                    nav(`/userportal/readbook/${res.id}`)
+                                }
+                            }}>View More</button>
+                            {(useraccess) ? (<><button onClick={() => {
+                                addToCart(res.title, res.id, res.thumbnailUrl)
+                            }}>Add to Cart</button></>) : (<></>)}
+                        </div>
+                    </div>
+                ))}
+
+
+            </div>
             <div id='mainbox'>
                 {Book.map((a) => {
                     return (
